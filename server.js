@@ -12,7 +12,7 @@ app.get("/jobs", async (req, res) => {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
-  await page.goto("https://www.indeed.com/jobs?q=nextjs+developer+freelance&l=Remote");
+  await page.goto("https://in.indeed.com/?r=us&vjk=eb5830687e8985aa");
 
   const jobs = await page.$$eval("a.tapItem", els =>
     els.slice(0,10).map(el => ({
